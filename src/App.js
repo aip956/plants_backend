@@ -1,23 +1,84 @@
-import logo from './logo.svg';
-import './App.css';
+import AllPlants from "./pages/AllPlants";
+import SinglePlant from "./pages/SinglePlant";
+import Form from "./pages/Form";
 
-function App() {
+// Import React and Hooks
+import React, { useState, useEffect } from "react";
+
+// Import components from React Router
+import { Route, Switch, Link } from "react-router-dom";
+
+
+function App(props) {
+  ////////////////////
+  // Style Objects
+  ////////////////////
+
+  const h1 = {
+    textAlign: "center",
+    margin: "10px",
+  };
+
+  ///////////////
+  // State & Other Variables
+  ///////////////
+
+  // Our Api Url
+  const url = "https://plantsbe.herokuapp.com/plants";
+
+  // State to hold the list of plants
+  const [plants, setPlants] = useState([]);
+
+//////////////
+  // Functions
+  //////////////
+
+// Function to get the list of plants from API
+const getPlants = async () => {
+  const response = await fetch(url);
+  const data = await response.json();
+  setPlants(data);
+  };
+
+  //////////////
+  // useEffects
+  //////////////
+
+// useEffect to get list of plants when page loads
+useEffect(() => {
+  getPlants();
+}, []);
+
+  /////////////////////
+  // returned JSX
+  /////////////////////
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style={h1}>My Plants List</h1>
+      <Switch>
+        <Route 
+        exact 
+        path="/"
+        render={(rp) => <AllPlants {...rp} plants={plants} />}
+        />
+        <Route 
+        path = "/plant/:id"
+        render={(rp) => (
+          <SinglePlant {...rp} plants={plants} />
+        )}
+        />
+
+        <Route 
+        path = "/new"
+        render={(rp) => <Form {...rp} />}
+        />
+
+        <Route 
+        path = "/edit"
+        render={(rp) => <Form {...rp} />}
+        />
+      </Switch>
     </div>
   );
 }

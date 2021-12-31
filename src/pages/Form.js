@@ -30,47 +30,48 @@ const Form = ({ initialPlant, handleSubmit, buttonLabel, history }) => {
 
   return (
     <form onSubmit={handleSubmission}>
+      <label for="plantname">Plant Name</label>
       <input
       type="text"
       onChange={handleChange}
-      placeholder="Enter Plant's name / id"
+      placeholder="Enter Plant's name"
       defaultValue={formData.plantname}
-      name="Plant's Name"
+      name="plantname"
       />
       <input
       type="text"
       onChange={handleChange}
       placeholder="Enter Type of Plant"
       defaultValue={formData.planttype}
-      name="Plant Type"
+      name="planttype"
       />
      <input
       type="date"
       onChange={handleChange}
       placeholder="Enter Date Last Watered"
       defaultValue={formData.lastWatered}
-      name="Date Last Watered"
+      name="lastWatered"
       />
       <input
       type="date"
       onChange={handleChange}
       placeholder="Enter Date Last Fed"
       defaultValue={formData.lastFed}
-      name="Date Last Fed"
+      name="lastFed"
       />
       <input
       type="text"
       onChange={handleChange}
       placeholder="Enter Recommended Watering Frequency"
       defaultValue={formData.recWater}
-      name="Recommended Watering"
+      name="recWater"
       />
       <input
       type="text"
       onChange={handleChange}
       placeholder="Enter Recommended Feeding Frequency"
       defaultValue={formData.recFeed}
-      name="Recommended Feeding"
+      name="recFeed"
       />
       <input type="submit" value={buttonLabel} />
     </form>

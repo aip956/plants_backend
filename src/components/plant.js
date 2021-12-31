@@ -15,9 +15,9 @@ const div = {
 return (
 <div style={div}>
 <Link to={`/plant/${plant.id}`}>
-  <h1>{plant.subject}</h1>
+  <h1>{plant.plantname}</h1>
 </Link>
-<h2>{plant.details}</h2>
+<h2>{plant.planttype}</h2>
 </div>
 );
 };

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Destructure the plant from propos
+// Destructure the plant from props
 
-const Plant = ({ props }) => {
+const Plant = ({ plant }) => {
 // Style Objects
 const div = {
   textAlign: "center",

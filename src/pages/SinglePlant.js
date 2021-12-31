@@ -19,17 +19,17 @@ const SinglePlant = ({ plants, match, edit, deletePlant }) => {
 
   return (
   <div style={div}>
-    <h1>{plant.plantname}</h1>
-    <h2>{plant.planttype}</h2>
-    <h3>{plant.lastWatered}</h3>
-    <h3>{plant.lastFed}</h3>
-    <h4>{plant.recWater}</h4>
-    <h4>{plant.recFeed}</h4>
+    <h1>Name: {plant.plantname}</h1>
+    <h2>Plant Type: {plant.planttype}</h2>
+    <h3>Last Watered: {plant.lastWatered}</h3>
+    <h3>Last Fed: {plant.lastFed}</h3>
+    <h4>Recommended Water: {plant.recWater}</h4>
+    <h4>Recommended Feed: {plant.recFeed}</h4>
 
     <button onClick={(event) => edit(plant)}>Edit</button>
     <button onClick={(event) => deletePlant(plant)}>Delete</button>
     <Link to="/">
-      <button>Go Back</button>
+      <button>Go Back to Plant List</button>
     </Link>
   </div>
 );

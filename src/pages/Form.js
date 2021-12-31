@@ -38,6 +38,7 @@ const Form = ({ initialPlant, handleSubmit, buttonLabel, history }) => {
       defaultValue={formData.plantname}
       name="plantname"
       />
+      <label for="planttype">Type of Plant</label>
       <input
       type="text"
       onChange={handleChange}
@@ -45,17 +46,17 @@ const Form = ({ initialPlant, handleSubmit, buttonLabel, history }) => {
       defaultValue={formData.planttype}
       name="planttype"
       />
+    <label for="lastWatered">Enter Date Last Watered</label>
      <input
       type="date"
       onChange={handleChange}
-      placeholder="Enter Date Last Watered"
       defaultValue={formData.lastWatered}
       name="lastWatered"
       />
+      <label for="lastFed">Enter Date Last Fed</label>
       <input
       type="date"
       onChange={handleChange}
-      placeholder="Enter Date Last Fed"
       defaultValue={formData.lastFed}
       name="lastFed"
       />
@@ -74,6 +75,8 @@ const Form = ({ initialPlant, handleSubmit, buttonLabel, history }) => {
       name="recFeed"
       />
       <input type="submit" value={buttonLabel} />
+      <button>Go Back to Plant List</button>
+
     </form>
     );
 };

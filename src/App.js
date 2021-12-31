@@ -37,12 +37,12 @@ function App(props) {
 
   // An object that represents a null plant
   const nullPlant = {
-    plantname: "Yellow",
-    planttype: "Hurricane Fern",
-    lastWatered: "2021-12-25",
-    lastFed: "2021-12-25",
-    recWater: "Once a week",
-    recFeed: "Once a month",
+    plantname: "",
+    planttype: "",
+    lastWatered: "",
+    lastFed: "",
+    recWater: "",
+    recFeed: "",
   };
 
   // Const state to hold plant to edit
@@ -169,6 +169,7 @@ useEffect(() => {
         initialPlant={targetPlant}
         handleSubmit={updatePlant}
         buttonLabel="Edit a Plant!"
+        
         />;
         }}
         />

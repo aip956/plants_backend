@@ -2,8 +2,13 @@ import AllPlants from "./pages/AllPlants";
 import SinglePlant from "./pages/SinglePlant";
 import Form from "./pages/Form";
 
+// Burger from https://www.youtube.com/watch?v=GGkBwpxV7AI
+// Burger imports
+import Navbar from "./components/Nav/Navbar";
+
+
 // Import React and Hooks
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // Import components from React Router
 import { Route, Switch, Link } from "react-router-dom";
@@ -20,10 +25,11 @@ function App(props) {
   };
 
   const button = {
-    backgroundColor: "navy",
+    backgroundColor: "#0D2538",
     display: "block",
     margin: "auto",
   };
+
 
   ///////////////
   // State & Other Variables
@@ -43,6 +49,7 @@ function App(props) {
     lastFed: "",
     recWater: "",
     recFeed: "",
+    
   };
 
   // Const state to hold plant to edit
@@ -120,11 +127,20 @@ useEffect(() => {
   /////////////////////
   // returned JSX
   /////////////////////
+// globalstyles goes in classname app div
+// need to add const open, set open
 
   return (
+
     <div className="App">
+   <Navbar />
+
+  
+  
       <h1 style={h1}>My Plants List</h1>
+
       <Link to="/new"><button style={button}>Create New Plant</button></Link>
+
       <Switch>
         {/* INDEX PAGE */}
         <Route 
@@ -160,7 +176,6 @@ useEffect(() => {
         />;
       }}
         />
-
         <Route 
         path = "/edit"
         render={(rp) => {
@@ -169,13 +184,15 @@ useEffect(() => {
         initialPlant={targetPlant}
         handleSubmit={updatePlant}
         buttonLabel="Edit a Plant!"
-        
-        />;
+                />;
         }}
         />
       </Switch>
     </div>
-  );
+
+// Closes the return
+  ); 
+// Closes the App
 }
 
 export default App;

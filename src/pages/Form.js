@@ -74,6 +74,13 @@ const Form = ({ initialPlant, handleSubmit, buttonLabel, history }) => {
       defaultValue={formData.recFeed}
       name="recFeed"
       />
+      <input
+      type="text"
+      onChange={handleChange}
+      placeholder="Enter User ID"
+      defaultValue={formData.user_id}
+      name="user_id"
+      />
       <input type="submit" value={buttonLabel} />
       <button>Go Back to Plant List</button>
 

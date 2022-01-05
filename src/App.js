@@ -36,8 +36,8 @@ function App(props) {
   ///////////////
 
   // Our Api Url
-  const url = "https://plantsbe.herokuapp.com/plants/";
-
+  // const url = "https://plantsbe.herokuapp.com/plants/";
+const url = 'http://localhost:3000/plants/'
   // State to hold the list of plants
   const [plants, setPlants] = useState([]);
 

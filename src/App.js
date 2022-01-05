@@ -172,7 +172,7 @@ useEffect(() => {
         return <Form {...rp}
         initialPlant={nullPlant}
         handleSubmit={addPlants}
-        buttonLabel="Add a Plant!"
+        buttonLabel="Add Me!"
         />;
       }}
         />
@@ -183,7 +183,7 @@ useEffect(() => {
         {...rp} 
         initialPlant={targetPlant}
         handleSubmit={updatePlant}
-        buttonLabel="Edit a Plant!"
+        buttonLabel="Edit Me!"
                 />;
         }}
         />

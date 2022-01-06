@@ -1,8 +1,14 @@
 // Import useState hook
 import React, { useState } from "react";
+import Button from "../components/button-style";
+
+
 
 // Destructure out props, including router prop history
+
 const Form = ({ initialPlant, handleSubmit, buttonLabel, history }) => {
+
+
   // The Form Data State
 
   // Initialize the form with the initialTodo state
@@ -81,8 +87,8 @@ const Form = ({ initialPlant, handleSubmit, buttonLabel, history }) => {
       defaultValue={formData.user_id}
       name="user_id"
       />
-      <input type="submit" value={buttonLabel} />
-      <button>Go Back to Plant List</button>
+      <input type="submit" style={Button} value={buttonLabel}  />
+      <button style={Button}>Go Back to Plant List</button>
 
     </form>
     );

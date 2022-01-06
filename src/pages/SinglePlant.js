@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "../components/button-style";
+
 
 // Destructuring the props needed to get our plant, including router prop match
 
@@ -9,7 +11,7 @@ const SinglePlant = ({ plants, match, edit, deletePlant }) => {
   const plant = plants.find((plant) => plant.id === id);
 
   // Styles
-
+  
   const div = {
     textAlign: "center",
     border: "3px solid green",
@@ -27,10 +29,10 @@ const SinglePlant = ({ plants, match, edit, deletePlant }) => {
     <h4>Rec'd Feed: {plant.recFeed}</h4>
     <h5>User ID: {plant.user_id}</h5>
 
-    <button onClick={(event) => edit(plant)}>Edit</button>
-    <button onClick={(event) => deletePlant(plant)}>Delete</button>
+    <button style={Button} onClick={(event) => edit(plant)}>Edit</button>
+    <button style={Button} onClick={(event) => deletePlant(plant)}>Delete</button>
     <Link to="/">
-      <button>Go Back to Plant List</button>
+      <button style={Button}>Go Back to Plant List</button>
     </Link>
   </div>
 );

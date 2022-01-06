@@ -1,6 +1,7 @@
 import AllPlants from "./pages/AllPlants";
 import SinglePlant from "./pages/SinglePlant";
 import Form from "./pages/Form";
+import Button from "./components/button-style";
 
 // Burger from https://www.youtube.com/watch?v=GGkBwpxV7AI
 // Burger imports
@@ -26,12 +27,6 @@ function App(props) {
   const h1 = {
     textAlign: "center",
     margin: "10px",
-  };
-
-  const button = {
-    backgroundColor: "#0D2538",
-    display: "block",
-    margin: "auto",
   };
 
 
@@ -139,12 +134,10 @@ useEffect(() => {
     <div className="App">
   
    <Navbar />
-
-  
-  
+ 
       <h1 style={h1}>My Plants List</h1>
 
-      <Link to="/new"><button style={button}>Create New Plant</button></Link>
+      <Link to="/new"><button style={Button}>Create New Plant</button></Link>
 
       <Switch>
         {/* INDEX PAGE */}
@@ -201,3 +194,4 @@ useEffect(() => {
 }
 
 export default App;
+

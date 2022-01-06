@@ -6,6 +6,10 @@ import Form from "./pages/Form";
 // Burger imports
 import Navbar from "./components/Nav/Navbar";
 
+// Import Auth0
+import { Auth0Provider } from "@auth0/auth0-react";
+import AuthenticationButton from "./components/authentication-button";
+
 
 // Import React and Hooks
 import React, { useState, useEffect, useRef } from "react";
@@ -36,8 +40,8 @@ function App(props) {
   ///////////////
 
   // Our Api Url
-  // const url = "https://plantsbe.herokuapp.com/plants/";
-const url = 'http://localhost:3000/plants/'
+  const url = "https://plantsbe.herokuapp.com/plants/";
+// const url = 'http://localhost:3000/plants/'
   // State to hold the list of plants
   const [plants, setPlants] = useState([]);
 
@@ -133,6 +137,7 @@ useEffect(() => {
   return (
 
     <div className="App">
+  
    <Navbar />
 
   
@@ -189,7 +194,7 @@ useEffect(() => {
         />
       </Switch>
     </div>
-
+  
 // Closes the return
   ); 
 // Closes the App

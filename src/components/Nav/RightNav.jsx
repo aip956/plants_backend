@@ -1,6 +1,8 @@
 // Burger from https://www.youtube.com/watch?v=GGkBwpxV7AI
 import React from 'react';
 import styled from 'styled-components';
+import { useAuth0 } from '@auth0/auth0-react';
+import AuthenticationButton from '../authentication-button';
 
 const Ul = styled.ul`
     list-style: none;
@@ -30,12 +32,13 @@ const Ul = styled.ul`
 `;
 
 const RightNav = ({ open }) => {
+    const {loginWithRedirect, logout, user, isLoading} = useAuth0();
     return (
     <Ul open={open}>
         <li>Home</li>
         <li>About Me</li>
-        <li>Sign In</li>
-        <li>Sign Out</li>
+        <AuthenticationButton />
+        
     </Ul>
     )
 }

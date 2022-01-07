@@ -2,6 +2,7 @@ import AllPlants from "./pages/AllPlants";
 import SinglePlant from "./pages/SinglePlant";
 import Form from "./pages/Form";
 import Button from "./components/button-style";
+import buttonbox from "./components/button-box";
 
 // Burger from https://www.youtube.com/watch?v=GGkBwpxV7AI
 // Burger imports
@@ -136,9 +137,10 @@ useEffect(() => {
    <Navbar />
  
       <h1 style={h1}>My Plants List</h1>
-
-      <Link to="/new"><button style={Button}>Create New Plant</button></Link>
-
+      <div style={buttonbox}>
+      <Link to="/new"><button style={Button} >Create New Plant</button></Link>
+      </div>
+      
       <Switch>
         {/* INDEX PAGE */}
         <Route 

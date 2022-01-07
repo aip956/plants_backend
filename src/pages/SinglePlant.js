@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/button-style";
+import buttonbox from "../components/button-box";
 
 
 // Destructuring the props needed to get our plant, including router prop match
@@ -19,6 +20,7 @@ const SinglePlant = ({ plants, match, edit, deletePlant }) => {
     margin: "30px auto",
   };
 
+
   return (
   <div style={div}>
     <h1>Name: {plant.plantname}</h1>
@@ -29,11 +31,14 @@ const SinglePlant = ({ plants, match, edit, deletePlant }) => {
     <h4>Rec'd Feed: {plant.recFeed}</h4>
     <h5>User ID: {plant.user_id}</h5>
 
+<div style={buttonbox}>
     <button style={Button} onClick={(event) => edit(plant)}>Edit</button>
     <button style={Button} onClick={(event) => deletePlant(plant)}>Delete</button>
     <Link to="/">
       <button style={Button}>Go Back to Plant List</button>
     </Link>
+    </div>
+
   </div>
 );
 };

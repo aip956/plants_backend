@@ -18,12 +18,12 @@ Plants is a full stack application using a REACT frontend, Ruby on Rails backend
 * Model "plant" has full CRUD
 
 * Challenges:
-## Variable naming matching with schema
-## Needed to add to routes when adding another model:  resources :model
-## Needed to add environment vars to Netlify and manually re-deploy
+* Variable naming matching with schema
+* Needed to add to routes when adding another model:  resources :model
+* Needed to add environment vars to Netlify and manually re-deploy
 
 * To Add:
-## Authorized routes
-## Index Sort
-## Index Search
-## Image for background
+* Authorized routes
+* Index Sort
+* Index Search
+* Image for background
